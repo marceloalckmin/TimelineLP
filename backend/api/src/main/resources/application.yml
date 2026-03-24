@@ -1,13 +1,9 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:timelp
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5432/timelinelp
+    username: timelinelp
+    password: timelinelp
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-  h2:
-    console:
-      enabled: true
