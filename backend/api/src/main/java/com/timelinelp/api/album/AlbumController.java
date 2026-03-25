@@ -12,7 +12,7 @@ import com.timelinelp.api.album.dto.AlbumRequest;
 import com.timelinelp.api.album.dto.AlbumResponse;
 
 @RestController
-@RequestMapping("/album")
+@RequestMapping("/albums")
 public class AlbumController {
     private AlbumService service;
 
@@ -20,7 +20,7 @@ public class AlbumController {
         this.service = service;
     }
 
-    @PostMapping("/reg-album")
+    @PostMapping
     public AlbumResponse registerAlbum(@RequestBody AlbumRequest albumDTO) throws Exception{
         AlbumResponse response = service.registerAlbum(albumDTO);
         return response;
