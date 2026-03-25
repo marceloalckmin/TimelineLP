@@ -25,9 +25,9 @@ backend/
 - [x] Album registration with duplicate detection
 - [x] List albums with PostgreSQL persistence
 - [x] Docker Compose setup with persistent volume
+- [x] User registration
  
 ### In Progress
-- [ ] User registration
 - [ ] Timeline CRUD for each user only (or maybe sharing with 1+ users)
 - [ ] Add/remove albums from timelines
  
@@ -43,18 +43,19 @@ backend/
  
 ## Running Locally
  
-**Prerequisites:** Java 21, Maven, Docker
+**Prerequisites:** Java 21, Maven 4.0.0, Docker
  
 ```bash
 # Clone the repository
 git clone https://github.com/marceloalckmin/TimelineLP.git
-cd TimelineLP/backend/api
- 
+cd TimelineLP # if not already on the base directory 
+
 # Start PostgreSQL
 docker compose up -d
- 
+
 # Run the application
-./mvnw spring-boot:run
+cd backend/api
+mvn spring-boot:run
 ```
  
 The API will be available at `http://localhost:8080`.
