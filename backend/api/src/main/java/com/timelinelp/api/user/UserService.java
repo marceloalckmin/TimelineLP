@@ -3,9 +3,11 @@ package com.timelinelp.api.user;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.timelinelp.api.user.dto.*;
 
-
+@Service
 public class UserService {
     private UserRepository repository;
 
@@ -19,7 +21,8 @@ public class UserService {
             throw new Exception("Email already in use");
         }
 
-        User registeringUser = new User(userDTO.getName(),
+        User registeringUser = new User(
+            userDTO.getName(),
             userDTO.getEmail(),
             userDTO.getPassword()
         );

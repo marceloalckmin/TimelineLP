@@ -1,7 +1,7 @@
 package com.timelinelp.api.user;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import com.timelinelp.api.timeline.Timeline;
@@ -33,7 +33,7 @@ public class User {
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "user")
-    private ArrayList<Timeline> timeline;
+    private List<Timeline> timeline;
 
     public User(String name, String email, String password){
         this.name = name;
