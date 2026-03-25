@@ -1,5 +1,8 @@
 package com.timelinelp.api.user;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.timelinelp.api.user.dto.*;
 
 
@@ -26,6 +29,17 @@ public class UserService {
         UserResponse response = new UserResponse(registeringUser);
 
         return response;
+    }
+
+    public List<UserResponse> getUsers(){
+        List<User> registeredUsers = repository.findAll();
+        List<UserResponse> users = new ArrayList<>();
+
+        for(User user : registeredUsers){
+            users.add(new UserResponse(user));
+        }
+
+        return users;
     }
     
 }
