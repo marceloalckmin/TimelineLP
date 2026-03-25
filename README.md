@@ -48,7 +48,7 @@ backend/
 ```bash
 # Clone the repository
 git clone https://github.com/marceloalckmin/TimelineLP.git
-cd TimelineLP/backend
+cd TimelineLP/backend/api
  
 # Start PostgreSQL
 docker compose up -d
