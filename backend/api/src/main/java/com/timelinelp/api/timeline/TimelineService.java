@@ -27,7 +27,9 @@ public class TimelineService {
             //TODO: Think of a new way to check for each user's timeline for that timeline name, if there's already a timeline with that name, just change it to thatname+(1,2) etc;
         }
 
-        Timeline registeringTimeline = new Timeline(timelineDto.getName(), timelineDto.getUser());
+        Timeline registeringTimeline = new Timeline(timelineDto.getName(), 
+            userRepository.findById(timelineDto.getUserId()).orElseThrow(() -> new Exception("User not found :c"))
+        );
         repository.save(registeringTimeline);
 
         TimelineResponse response = new TimelineResponse(registeringTimeline);

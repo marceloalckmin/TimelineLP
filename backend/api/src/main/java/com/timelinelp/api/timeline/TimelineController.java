@@ -2,6 +2,7 @@ package com.timelinelp.api.timeline;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ public class TimelineController {
         return response;
     }
 
+    @GetMapping
     public List<TimelineResponse> getUserTimelinesByEmail(@RequestBody String userEmail) throws Exception{
         List<TimelineResponse> userTimelines = service.getTimelinesFromUser(userEmail);
         return userTimelines;

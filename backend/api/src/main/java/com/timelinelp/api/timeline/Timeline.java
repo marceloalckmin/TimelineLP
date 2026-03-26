@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import com.timelinelp.api.user.User;
@@ -19,6 +20,7 @@ import com.timelinelp.api.user.User;
 @Setter
 @Entity
 @Table(name = "timelines")
+@NoArgsConstructor
 public class Timeline {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
