@@ -31,4 +31,10 @@ public class Timeline {
     private User user;
 
     private LocalDateTime createdAt;
+
+    public Timeline(String name, User user){
+        this.name = name;
+        this.user = user;
+        this.createdAt = LocalDateTime.now();
+    }
 }
